@@ -917,6 +917,40 @@ h1, h2, h3, h4 {
     box-shadow: 0 8px 20px rgba(242, 145, 10, 0.4);
 }
 
+@media (max-width: 768px) {
+    .recipe-showcase {
+      grid-template-columns: 1fr; /* Stack on top of each other */
+    }
+  
+    .recipe-thumbnails {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .thumbnail {
+      width: 80px;
+      height: 60px;
+    }
+  
+    .recipe-details h3 {
+      font-size: 1.5rem;
+    }
+  
+    .recipe-meta {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+  
+    .highlight-item {
+      padding: 12px;
+    }
+  
+    .view-recipe-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
 /* Testimonials Section */
 .testimonials {
     padding: 6rem 0;
@@ -1935,3 +1969,72 @@ textarea.form-control {
     background-position: right 10px center;
     background-size: 16px;
 }
+@media (max-width: 768px) {
+    /* Shrink hero text */
+    .recipe-hero-content h1 {
+      font-size: 2.2rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+  
+    .recipe-subtitle {
+      font-size: 1rem;
+      text-align: center;
+      padding: 0 10px;
+    }
+  
+    /* Adjust Recipe of the Month badge */
+    .recipe-of-month-badge {
+      top: 10px;
+      right: 10px;
+      font-size: 0.75rem;
+      padding: 5px 10px;
+      transform: rotate(0deg);
+    }
+  
+    /* Navigation cleanup */
+    header nav ul {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+  
+    header nav ul li {
+      margin: 5px 0;
+    }
+  
+    /* Fix hero section height */
+    .recipe-hero {
+      height: auto;
+      padding: 40px 0;
+    }
+  
+    /* Fix metadata layout */
+    .recipe-meta {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .highlight-item {
+      padding: 10px 15px;
+      width: 90%;
+      text-align: center;
+    }
+  
+    /* Ingredient cards grid */
+    .ingredients-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    /* Celebration section layout fix */
+    .celebration-content {
+      flex-direction: column;
+    }
+  
+    .celebration-text, .celebration-image {
+      padding: 0;
+      width: 100%;
+    }
+  }
+  
