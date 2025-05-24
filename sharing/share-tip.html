@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Cooking Tips - Nigerian Cuisine Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">♨️</div>
+                    The Culinary Map
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#regions">Regional Cuisine</a></li>
+                    <li><a href="../index.html#ingredients">Ingredients</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- Page Content -->
+    <section class="community" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Share Your Cooking Tips</h1>
+                    <p>Help others master Nigerian cuisine by sharing your kitchen wisdom and culinary secrets</p>
+                </div>
+                <form id="tip-form" action="#" method="post">
+                    <!-- Basic Tip Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Basic Information</h3>
+                        <div class="form-group">
+                            <label for="tip-title" class="form-label">Tip Title*</label>
+                            <input type="text" id="tip-title" name="tip-title" class="form-control" placeholder="e.g. Perfect Palm Oil Clarification" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tip Category*</label>
+                            <div class="custom-select">
+                                <select id="tip-category" name="tip-category" class="form-control" required>
+                                    <option value="" disabled selected>Select category</option>
+                                    <option value="ingredient-prep">Ingredient Preparation</option>
+                                    <option value="cooking-technique">Cooking Technique</option>
+                                    <option value="flavor-enhancement">Flavor Enhancement</option>
+                                    <option value="kitchen-hack">Kitchen Hack</option>
+                                    <option value="presentation">Food Presentation</option>
+                                    <option value="preservation">Food Preservation</option>
+                                    <option value="traditional-method">Traditional Method</option>
+                                    <option value="substitution">Ingredient Substitution</option>
+                                    <option value="equipment">Equipment Usage</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Region (if applicable)</label>
+                            <div class="custom-select">
+                                <select id="tip-region" name="tip-region" class="form-control">
+                                    <option value="" selected>Not region-specific</option>
+                                    <option value="northwest">Northwest Nigeria</option>
+                                    <option value="northeast">Northeast Nigeria</option>
+                                    <option value="southwest">Southwest Nigeria</option>
+                                    <option value="southeast">Southeast Nigeria</option>
+                                    <option value="southsouth">SouthSouth Nigeria</option>
+                                    <option value="middlebelt">Northcentral Nigeria</option>
+                                    <option value="fusion">Fusion/Modern Nigerian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Difficulty Level*</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-beginner" name="difficulty" value="beginner" checked>
+                                    <label for="difficulty-beginner">Beginner</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-intermediate" name="difficulty" value="intermediate">
+                                    <label for="difficulty-intermediate">Intermediate</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-advanced" name="difficulty" value="advanced">
+                                    <label for="difficulty-advanced">Advanced</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Detailed Tip Content -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Tip Details</h3>
+                        <div class="form-group">
+                            <label for="tip-description" class="form-label">Problem or Challenge*</label>
+                            <textarea id="tip-description" name="tip-description" class="form-control" placeholder="Describe the cooking problem or challenge your tip addresses" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tip-solution" class="form-label">Your Solution/Tip*</label>
+                            <textarea id="tip-solution" name="tip-solution" class="form-control" placeholder="Provide your detailed tip or solution to the problem" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tip-why" class="form-label">Why It Works (Optional)</label>
+                            <textarea id="tip-why" name="tip-why" class="form-control" placeholder="Explain the science or reasoning behind why your tip works"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Related Items -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Related Items</h3>
+                        <div class="form-group">
+                            <label for="related-dishes" class="form-label">Related Dishes (Optional)</label>
+                            <input type="text" id="related-dishes" name="related-dishes" class="form-control" placeholder="List dishes where this tip is particularly useful">
+                        </div>
+                        <div class="form-group">
+                            <label for="related-ingredients" class="form-label">Related Ingredients (Optional)</label>
+                            <input type="text" id="related-ingredients" name="related-ingredients" class="form-control" placeholder="List specific ingredients this tip applies to">
+                        </div>
+                        <div class="form-group">
+                            <label for="related-equipment" class="form-label">Related Equipment (Optional)</label>
+                            <input type="text" id="related-equipment" name="related-equipment" class="form-control" placeholder="List any specific equipment needed for this tip">
+                        </div>
+                    </div>
+
+                    <!-- Tip Images -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Tip Images</h3>
+                        <div class="form-group">
+                            <label class="form-label">Upload Images (Optional)</label>
+                            <div class="upload-container" id="image-upload">
+                                <div class="upload-icon">📷</div>
+                                <p>Click to upload photos demonstrating your tip</p>
+                                <p style="font-size: 0.8rem; color: var(--text-light);">Upload up to 3 images that help illustrate your tip</p>
+                                <input type="file" id="tip-images" name="tip-images[]" accept="image/*" multiple style="display: none;">
+                            </div>
+                            <div id="image-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Experience -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Personal Experience</h3>
+                        <div class="form-group">
+                            <label for="tip-experience" class="form-label">Your Experience (Optional)</label>
+                            <textarea id="tip-experience" name="tip-experience" class="form-control" placeholder="Share how you discovered this tip or a personal story related to it"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tip-variations" class="form-label">Variations or Alternatives (Optional)</label>
+                            <textarea id="tip-variations" name="tip-variations" class="form-control" placeholder="Share any variations or alternative approaches to this tip"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">About You</h3>
+                        <div class="form-group">
+                            <label for="author-name" class="form-label">Your Name*</label>
+                            <input type="text" id="author-name" name="author-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="author-email" class="form-label">Email Address*</label>
+                            <input type="email" id="author-email" name="author-email" class="form-control" required>
+                            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">We'll never share your email address</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="cooking-experience" class="form-label">Cooking Experience*</label>
+                            <div class="custom-select">
+                                <select id="cooking-experience" name="cooking-experience" class="form-control" required>
+                                    <option value="" disabled selected>Select your experience level</option>
+                                    <option value="home-cook">Home Cook</option>
+                                    <option value="enthusiast">Cooking Enthusiast</option>
+                                    <option value="chef">Professional Chef</option>
+                                    <option value="culinary-student">Culinary Student</option>
+                                    <option value="food-blogger">Food Blogger/Content Creator</option>
+                                    <option value="cultural-expert">Cultural Food Expert</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Would you like to be credited for this tip?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-yes" name="credit" value="yes" checked>
+                                    <label for="credit-yes">Yes, use my name</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-no" name="credit" value="no">
+                                    <label for="credit-no">No, keep anonymous</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Tip</button>
+                    
+                    <div class="form-footer">
+                        <p>By submitting this tip, you agree to our <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Community Guidelines</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">The Culinary Map</div>
+                <p class="footer-text">Preserving our flavors, nourishing our future.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#regions">Regional Cuisine</a>
+                    <a href="../index.html#ingredients">Ingredients</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">YT</a>
+                    <a href="#" class="social-icon">TW</a>
+                </div>
+                <p class="copyright">&copy; 2025 The Culinary Map Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

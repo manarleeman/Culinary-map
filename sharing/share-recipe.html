@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Recipe - Nigerian Cuisine Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">♨️</div>
+                    The Culinary Map
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#regions">Regional Cuisine</a></li>
+                    <li><a href="../index.html#ingredients">Ingredients</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="community" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Share Your Recipe</h1>
+                    <p>Help others explore Nigerian cuisine by sharing your favorite recipes</p>
+                </div>
+                <form id="recipe-form" action="#" method="post">
+                    <!-- Basic Recipe Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Basic Information</h3>
+                        <div class="form-group">
+                            <label for="recipe-name" class="form-label">Recipe Name*</label>
+                            <input type="text" id="recipe-name" name="recipe-name" class="form-control" placeholder="e.g. Jollof Rice" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-description" class="form-label">Brief Description*</label>
+                            <textarea id="recipe-description" name="recipe-description" class="form-control" placeholder="Tell us about your recipe - its origin, significance, or what makes it special" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Region*</label>
+                            <div class="custom-select">
+                                <select id="recipe-region" name="recipe-region" class="form-control" required>
+                                    <option value="" disabled selected>Select region</option>
+                                    <option value="northwest">Northwest Nigeria</option>
+                                    <option value="northeast">northeast Nigeria</option>
+                                    <option value="southwest">Southwest  Nigeria</option>
+                                    <option value="southeast">Southeast Nigeria</option>
+                                    <option value="southsouth">SouthSouth Nigeria</option>
+                                    <option value="middlebelt">northcentral Nigeria</option>
+                                    <option value="fusion">Fusion/Modern Nigerian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Difficulty Level*</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-easy" name="difficulty" value="easy" checked>
+                                    <label for="difficulty-easy">Easy</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-medium" name="difficulty" value="medium">
+                                    <label for="difficulty-medium">Medium</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="difficulty-hard" name="difficulty" value="hard">
+                                    <label for="difficulty-hard">Hard</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="prep-time" class="form-label">Preparation Time (minutes)*</label>
+                            <input type="number" id="prep-time" name="prep-time" class="form-control" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cook-time" class="form-label">Cooking Time (minutes)*</label>
+                            <input type="number" id="cook-time" name="cook-time" class="form-control" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servings" class="form-label">Number of Servings*</label>
+                            <input type="number" id="servings" name="servings" class="form-control" min="1" required>
+                        </div>
+                    </div>
+
+                    <!-- Ingredients Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Ingredients</h3>
+                        <div id="ingredients-container">
+                            <div class="ingredient-row">
+                                <input type="text" name="ingredient-quantity[]" class="form-control quantity-input" placeholder="Quantity" required>
+                                <input type="text" name="ingredient-name[]" class="form-control ingredient-input" placeholder="Ingredient" required>
+                            </div>
+                            <div class="ingredient-row">
+                                <input type="text" name="ingredient-quantity[]" class="form-control quantity-input" placeholder="Quantity" required>
+                                <input type="text" name="ingredient-name[]" class="form-control ingredient-input" placeholder="Ingredient" required>
+                            </div>
+                            <div class="ingredient-row">
+                                <input type="text" name="ingredient-quantity[]" class="form-control quantity-input" placeholder="Quantity" required>
+                                <input type="text" name="ingredient-name[]" class="form-control ingredient-input" placeholder="Ingredient" required>
+                            </div>
+                        </div>
+                        <button type="button" id="add-ingredient" class="add-more-btn">+ Add Another Ingredient</button>
+                    </div>
+
+                    <!-- Instructions Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Cooking Instructions</h3>
+                        <div id="instructions-container">
+                            <div class="instruction-item">
+                                <div class="step-number">1</div>
+                                <textarea name="instruction[]" class="form-control" placeholder="Describe this step..." required></textarea>
+                            </div>
+                            <div class="instruction-item">
+                                <div class="step-number">2</div>
+                                <textarea name="instruction[]" class="form-control" placeholder="Describe this step..." required></textarea>
+                            </div>
+                            <div class="instruction-item">
+                                <div class="step-number">3</div>
+                                <textarea name="instruction[]" class="form-control" placeholder="Describe this step..." required></textarea>
+                            </div>
+                        </div>
+                        <button type="button" id="add-instruction" class="add-more-btn">+ Add Another Step</button>
+                    </div>
+
+                    <!-- Recipe Tips Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Tips and Notes</h3>
+                        <div class="form-group">
+                            <label for="recipe-tips" class="form-label">Cooking Tips (Optional)</label>
+                            <textarea id="recipe-tips" name="recipe-tips" class="form-control" placeholder="Share any helpful tips, substitutions, or cultural context that would help others make this dish"></textarea>
+                        </div>
+                        <div class="tip-box">
+                            <h4>Pro Tip</h4>
+                            <p>Adding specific details about ingredient substitutions, traditional cooking methods, or serving suggestions makes your recipe more accessible to everyone!</p>
+                        </div>
+                    </div>
+
+                    <!-- Upload Images Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Recipe Images</h3>
+                        <div class="form-group">
+                            <label class="form-label">Upload Recipe Images (Optional)</label>
+                            <div class="upload-container" id="image-upload">
+                                <div class="upload-icon">📷</div>
+                                <p>Click to upload photos of your dish</p>
+                                <p style="font-size: 0.8rem; color: var(--text-light);">Upload up to 3 images that show the preparation or final result</p>
+                                <input type="file" id="recipe-images" name="recipe-images[]" accept="image/*" multiple style="display: none;">
+                            </div>
+                            <div id="image-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">About You</h3>
+                        <div class="form-group">
+                            <label for="author-name" class="form-label">Your Name*</label>
+                            <input type="text" id="author-name" name="author-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="author-email" class="form-label">Email Address*</label>
+                            <input type="email" id="author-email" name="author-email" class="form-control" required>
+                            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">We'll never share your email address</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Would you like to be credited for this recipe?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-yes" name="credit" value="yes" checked>
+                                    <label for="credit-yes">Yes, use my name</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-no" name="credit" value="no">
+                                    <label for="credit-no">No, keep anonymous</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Recipe</button>
+                    
+                    <div class="form-footer">
+                        <p>By submitting this recipe, you agree to our <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Community Guidelines</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">The Culinary Map</div>
+                <p class="footer-text">Preserving our flavors, nourishing our future.</p>
+                <div class="footer-links">
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#regions">Regional Cuisine</a>
+                    <a href="../index.html#ingredients">Ingredients</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">FB</a>
+                    <a href="#" class="social-icon">IG</a>
+                    <a href="#" class="social-icon">YT</a>
+                    <a href="#" class="social-icon">TW</a>
+                </div>
+                <p class="copyright">&copy; 2025 The Culinary Map Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

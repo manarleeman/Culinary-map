@@ -511,3 +511,128 @@ popularDishesSection.addEventListener('mouseleave', () => {
 startAutoplay();
 });
 });
+  // Image upload preview functionality
+  document.getElementById('image-upload').addEventListener('click', function() {
+    document.getElementById('recipe-images').click();
+});
+
+document.getElementById('recipe-images').addEventListener('change', function(e) {
+    const files = e.target.files;
+    const previewContainer = document.getElementById('image-preview');
+    previewContainer.innerHTML = '';
+
+    for (let i = 0; i < Math.min(files.length, 3); i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '100px';
+            img.style.height = '100px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '8px';
+            previewContainer.appendChild(img);
+        }
+        
+        reader.readAsDataURL(file);
+    }
+});
+
+// Add ingredient functionality
+document.getElementById('add-ingredient').addEventListener('click', function() {
+    const container = document.getElementById('ingredients-container');
+    const newRow = document.createElement('div');
+    newRow.className = 'ingredient-row';
+    newRow.innerHTML = `
+        <input type="text" name="ingredient-quantity[]" class="form-control quantity-input" placeholder="Quantity" required>
+        <input type="text" name="ingredient-name[]" class="form-control ingredient-input" placeholder="Ingredient" required>
+    `;
+    container.appendChild(newRow);
+});
+
+// Add instruction step functionality
+document.getElementById('add-instruction').addEventListener('click', function() {
+    const container = document.getElementById('instructions-container');
+    const stepCount = container.children.length + 1;
+    const newStep = document.createElement('div');
+    newStep.className = 'instruction-item';
+    newStep.innerHTML = `
+        <div class="step-number">${stepCount}</div>
+        <textarea name="instruction[]" class="form-control" placeholder="Describe this step..." required></textarea>
+    `;
+    container.appendChild(newStep);
+});
+
+// Form submission (placeholder for now)
+document.getElementById('recipe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for sharing your recipe! In a real implementation, this would be submitted to a server.');
+    // In a real implementation, you would send the form data to a server
+});
+   // Image upload preview functionality
+   document.getElementById('image-upload').addEventListener('click', function() {
+    document.getElementById('tip-images').click();
+});
+
+document.getElementById('tip-images').addEventListener('change', function(e) {
+    const files = e.target.files;
+    const previewContainer = document.getElementById('image-preview');
+    previewContainer.innerHTML = '';
+
+    for (let i = 0; i < Math.min(files.length, 3); i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.style.width = '100px';
+            img.style.height = '100px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '8px';
+            previewContainer.appendChild(img);
+        }
+        
+        reader.readAsDataURL(file);
+    }
+});
+
+// Form submission (placeholder for now)
+document.getElementById('tip-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for sharing your cooking tip! In a real implementation, this would be submitted to a server.');
+    // In a real implementation, you would send the form data to a server
+});
+  // Thumbnail upload preview functionality
+  document.getElementById('thumbnail-upload').addEventListener('click', function() {
+    document.getElementById('video-thumbnail').click();
+});
+
+document.getElementById('video-thumbnail').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const previewContainer = document.getElementById('thumbnail-preview');
+        previewContainer.innerHTML = '';
+        
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.width = '100%';
+        img.style.maxHeight = '200px';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '8px';
+        previewContainer.appendChild(img);
+    }
+    
+    reader.readAsDataURL(file);
+});
+
+// Form submission (placeholder for now)
+document.getElementById('video-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for sharing your video! In a real implementation, this would be submitted to a server.');
+    // In a real implementation, you would send the form data to a server
+});

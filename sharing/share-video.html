@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Video - Nigerian Cuisine Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Header -->
+     <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-icon">♨️</div>
+                    The Culinary Map
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#regions">Regional Cuisine</a></li>
+                    <li><a href="../index.html#ingredients">Ingredients</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <section class="community" style="padding-top: 3rem;">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1>Share Your Cooking Video</h1>
+                    <p>Help others explore Nigerian cuisine by sharing your cooking demonstrations</p>
+                </div>
+                <form id="video-form" action="#" method="post">
+                    <!-- Basic Video Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Basic Information</h3>
+                        <div class="form-group">
+                            <label for="video-title" class="form-label">Video Title*</label>
+                            <input type="text" id="video-title" name="video-title" class="form-control" placeholder="e.g. How to Make Perfect Egusi Soup" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="video-description" class="form-label">Video Description*</label>
+                            <textarea id="video-description" name="video-description" class="form-control" placeholder="Tell us about your video - what you're cooking, techniques shown, or what viewers will learn" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Region*</label>
+                            <div class="custom-select">
+                                <select id="video-region" name="video-region" class="form-control" required>
+                                    <option value="" disabled selected>Select region</option>
+                                    <option value="northwest">Northwest Nigeria</option>
+                                    <option value="northeast">Northeast Nigeria</option>
+                                    <option value="southwest">Southwest Nigeria</option>
+                                    <option value="southeast">Southeast Nigeria</option>
+                                    <option value="southsouth">SouthSouth Nigeria</option>
+                                    <option value="middlebelt">Northcentral Nigeria</option>
+                                    <option value="fusion">Fusion/Modern Nigerian</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Content Type*</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="type-tutorial" name="content-type" value="tutorial" checked>
+                                    <label for="type-tutorial">Cooking Tutorial</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-vlog" name="content-type" value="vlog">
+                                    <label for="type-vlog">Culinary Vlog</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="type-documentary" name="content-type" value="documentary">
+                                    <label for="type-documentary">Food Documentary</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="video-duration" class="form-label">Video Duration (minutes)*</label>
+                            <input type="number" id="video-duration" name="video-duration" class="form-control" min="1" required>
+                        </div>
+                    </div>
+
+                    <!-- Video Details Section -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Video Details</h3>
+                        <div class="form-group">
+                            <label for="video-url" class="form-label">Video URL (YouTube, Vimeo, etc.)*</label>
+                            <input type="url" id="video-url" name="video-url" class="form-control" placeholder="e.g. https://www.youtube.com/watch?v=example" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="video-thumbnail" class="form-label">Video Thumbnail*</label>
+                            <div class="upload-container" id="thumbnail-upload">
+                                <div class="upload-icon">🖼️</div>
+                                <p>Click to upload a thumbnail for your video</p>
+                                <input type="file" id="video-thumbnail" name="video-thumbnail" accept="image/*" style="display: none;" required>
+                            </div>
+                            <div id="thumbnail-preview" style="margin-top: 10px;"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="featured-dish" class="form-label">Featured Dish/Technique*</label>
+                            <input type="text" id="featured-dish" name="featured-dish" class="form-control" placeholder="e.g. Pounded Yam and Egusi Soup" required>
+                        </div>
+                    </div>
+
+                    <!-- Recipe Information (Optional) -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Recipe Information (Optional)</h3>
+                        <div class="form-group">
+                            <label for="video-ingredients" class="form-label">Ingredients Used</label>
+                            <textarea id="video-ingredients" name="video-ingredients" class="form-control" placeholder="List the main ingredients featured in your video"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="video-equipment" class="form-label">Equipment/Tools Used</label>
+                            <textarea id="video-equipment" name="video-equipment" class="form-control" placeholder="List any special equipment or tools featured in your video"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-link" class="form-label">Related Recipe Link</label>
+                            <input type="url" id="recipe-link" name="recipe-link" class="form-control" placeholder="Link to a full recipe if available">
+                        </div>
+                    </div>
+
+                    <!-- Tags and Categories -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">Tags and Categories</h3>
+                        <div class="form-group">
+                            <label for="video-tags" class="form-label">Tags (Comma separated)*</label>
+                            <input type="text" id="video-tags" name="video-tags" class="form-control" placeholder="e.g. soup, traditional, seafood, spicy" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Meal Type (Select all that apply)</label>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-breakfast" name="meal-type[]" value="breakfast">
+                                    <label for="meal-breakfast">Breakfast</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-lunch" name="meal-type[]" value="lunch">
+                                    <label for="meal-lunch">Lunch</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-dinner" name="meal-type[]" value="dinner">
+                                    <label for="meal-dinner">Dinner</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-snack" name="meal-type[]" value="snack">
+                                    <label for="meal-snack">Snack</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-dessert" name="meal-type[]" value="dessert">
+                                    <label for="meal-dessert">Dessert</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="checkbox" id="meal-drink" name="meal-type[]" value="drink">
+                                    <label for="meal-drink">Drink</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3 class="form-section-title">About You</h3>
+                        <div class="form-group">
+                            <label for="author-name" class="form-label">Your Name*</label>
+                            <input type="text" id="author-name" name="author-name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="author-email" class="form-label">Email Address*</label>
+                            <input type="email" id="author-email" name="author-email" class="form-control" required>
+                            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">We'll never share your email address</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="social-media" class="form-label">Social Media Handles (Optional)</label>
+                            <input type="text" id="social-media" name="social-media" class="form-control" placeholder="e.g. @your_cooking_account">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Would you like to be credited for this video?</label>
+                            <div class="radio-group">
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-yes" name="credit" value="yes" checked>
+                                    <label for="credit-yes">Yes, use my name</label>
+                                </div>
+                                <div class="radio-option">
+                                    <input type="radio" id="credit-no" name="credit" value="no">
+                                    <label for="credit-no">No, keep anonymous</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Video</button>
+                    
+                    <div class="form-footer">
+                        <p>By submitting this video, you agree to our <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Community Guidelines</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">The Culinary Map</div>
+            <p class="footer-text">Preserving our flavors, nourishing our future.</p>
+            <div class="footer-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#regions">Regional Cuisine</a>
+                <a href="../index.html#ingredients">Ingredients</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">FB</a>
+                <a href="#" class="social-icon">IG</a>
+                <a href="#" class="social-icon">YT</a>
+                <a href="#" class="social-icon">TW</a>
+            </div>
+            <p class="copyright">&copy; 2025 The Culinary Map Initiative. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>
