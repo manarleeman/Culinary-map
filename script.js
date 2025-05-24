@@ -636,3 +636,18 @@ document.getElementById('video-form').addEventListener('submit', function(e) {
     alert('Thank you for sharing your video! In a real implementation, this would be submitted to a server.');
     // In a real implementation, you would send the form data to a server
 });
+// Simple script for star rating functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star-rating .star');
+    
+    stars.forEach((star, index) => {
+        star.addEventListener('click', () => {
+            for (let i = 0; i <= index; i++) {
+                stars[i].classList.add('active');
+            }
+            for (let i = index + 1; i < stars.length; i++) {
+                stars[i].classList.remove('active');
+            }
+        });
+    });
+});
