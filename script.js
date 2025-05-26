@@ -651,3 +651,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".newsletter-form");
+    
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      const emailInput = form.querySelector("input[type='email']");
+      const email = emailInput.value;
+  
+      try {
+        const response = await fetch("https://culinary-map-api.onrender.com/api/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ email })
+        });
+  
+        if (response.ok) {
+          alert("Thank you for subscribing!");
+          emailInput.value = "";
+        } else {
+          alert("Oops! Something went wrong.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Network error, please try again.");
+      }
+    });
+  });
+  
