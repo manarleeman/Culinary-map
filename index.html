@@ -701,10 +701,37 @@
             <div class="newsletter-content">
                 <h3>Subscribe to Our Culinary Updates</h3>
                 <p>Get the latest recipes, cooking tips, and food stories delivered to your inbox</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" id="email" placeholder="Your email address" required>
                     <button type="submit">Subscribe</button>
                 </form>
+                <p id="response-message" style="margin-top: 10px;"></p>
+                <script>
+                    const form = document.getElementById('newsletter-form');
+                    const responseMsg = document.getElementById('response-message');
+                  
+                    form.addEventListener('submit', async (e) => {
+                      e.preventDefault();
+                      const email = document.getElementById('email').value;
+                  
+                      try {
+                        const res = await fetch('https://culinary-map-api.onrender.com/api/subscribe', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify({ email })
+                        });
+                  
+                        const data = await res.json();
+                        responseMsg.textContent = data.message;
+                        form.reset();
+                      } catch (err) {
+                        console.error(err);
+                        responseMsg.textContent = 'Something went wrong. Please try again later.';
+                      }
+                    });
+                  </script>
             </div>
         </div>
     </section>
