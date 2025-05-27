@@ -681,4 +681,59 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+  const form = document.getElementById('tip-form');
+const imageUploadContainer = document.getElementById('image-upload');
+const imageInput = document.getElementById('tip-images');
+
+// Open file dialog when upload box is clicked
+if (imageUploadContainer && imageInput) {
+  imageUploadContainer.addEventListener('click', () => {
+    imageInput.click();
+  });
+
+  // Show image previews
+  imageInput.addEventListener('change', () => {
+    const previewContainer = document.getElementById('image-preview');
+    previewContainer.innerHTML = ''; // Clear previous previews
+
+    Array.from(imageInput.files).forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.style.height = '80px';
+        img.style.borderRadius = '10px';
+        img.style.objectFit = 'cover';
+        previewContainer.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+}
+
+// Handle form submission
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch('/api/share-tip', {
+      method: 'POST',
+      body: formData,
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('✅ Your tip has been submitted successfully!');
+      form.reset();
+      document.getElementById('image-preview').innerHTML = '';
+    } else {
+      alert(`❌ Submission failed: ${result.error || 'Something went wrong'}`);
+    }
+  } catch (error) {
+    console.error('Error submitting tip:', error);
+    alert('❌ Submission error. Please try again later.');
+  }
+});
