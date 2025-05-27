@@ -33,18 +33,18 @@
                     <h1>Share Your Cooking Tips</h1>
                     <p>Help others master Nigerian cuisine by sharing your kitchen wisdom and culinary secrets</p>
                 </div>
-                <form id="tip-form" action="#" method="post">
+                <form id="tip-form" method="POST" enctype="multipart/form-data">
                     <!-- Basic Tip Information -->
                     <div class="form-section">
                         <h3 class="form-section-title">Basic Information</h3>
                         <div class="form-group">
-                            <label for="tip-title" class="form-label">Tip Title*</label>
-                            <input type="text" id="tip-title" name="tip-title" class="form-control" placeholder="e.g. Perfect Palm Oil Clarification" required>
+                            <label for="title" class="form-label">Tip Title*</label>
+                            <input type="text" id="title" name="title" class="form-control" placeholder="e.g. Perfect Palm Oil Clarification" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Tip Category*</label>
+                            <label for="category" class="form-label">Tip Category*</label>
                             <div class="custom-select">
-                                <select id="tip-category" name="tip-category" class="form-control" required>
+                                <select id="category" name="category" class="form-control" required>
                                     <option value="" disabled selected>Select category</option>
                                     <option value="ingredient-prep">Ingredient Preparation</option>
                                     <option value="cooking-technique">Cooking Technique</option>
@@ -59,9 +59,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Region (if applicable)</label>
+                            <label for="region" class="form-label">Region (if applicable)</label>
                             <div class="custom-select">
-                                <select id="tip-region" name="tip-region" class="form-control">
+                                <select id="region" name="region" class="form-control">
                                     <option value="" selected>Not region-specific</option>
                                     <option value="northwest">Northwest Nigeria</option>
                                     <option value="northeast">Northeast Nigeria</option>
@@ -77,55 +77,55 @@
                             <label class="form-label">Difficulty Level*</label>
                             <div class="radio-group">
                                 <div class="radio-option">
-                                    <input type="radio" id="difficulty-beginner" name="difficulty" value="beginner" checked>
-                                    <label for="difficulty-beginner">Beginner</label>
+                                    <input type="radio" id="beginner" name="difficulty" value="beginner" checked>
+                                    <label for="beginner">Beginner</label>
                                 </div>
                                 <div class="radio-option">
-                                    <input type="radio" id="difficulty-intermediate" name="difficulty" value="intermediate">
-                                    <label for="difficulty-intermediate">Intermediate</label>
+                                    <input type="radio" id="intermediate" name="difficulty" value="intermediate">
+                                    <label for="intermediate">Intermediate</label>
                                 </div>
                                 <div class="radio-option">
-                                    <input type="radio" id="difficulty-advanced" name="difficulty" value="advanced">
-                                    <label for="difficulty-advanced">Advanced</label>
+                                    <input type="radio" id="advanced" name="difficulty" value="advanced">
+                                    <label for="advanced">Advanced</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Detailed Tip Content -->
+                
+                    <!-- Tip Details -->
                     <div class="form-section">
                         <h3 class="form-section-title">Tip Details</h3>
                         <div class="form-group">
-                            <label for="tip-description" class="form-label">Problem or Challenge*</label>
-                            <textarea id="tip-description" name="tip-description" class="form-control" placeholder="Describe the cooking problem or challenge your tip addresses" required></textarea>
+                            <label for="description" class="form-label">Problem or Challenge*</label>
+                            <textarea id="description" name="description" class="form-control" placeholder="Describe the cooking problem or challenge your tip addresses" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tip-solution" class="form-label">Your Solution/Tip*</label>
-                            <textarea id="tip-solution" name="tip-solution" class="form-control" placeholder="Provide your detailed tip or solution to the problem" required></textarea>
+                            <label for="solution" class="form-label">Your Solution/Tip*</label>
+                            <textarea id="solution" name="solution" class="form-control" placeholder="Provide your detailed tip or solution to the problem" required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tip-why" class="form-label">Why It Works (Optional)</label>
-                            <textarea id="tip-why" name="tip-why" class="form-control" placeholder="Explain the science or reasoning behind why your tip works"></textarea>
+                            <label for="why" class="form-label">Why It Works (Optional)</label>
+                            <textarea id="why" name="why" class="form-control" placeholder="Explain the science or reasoning behind why your tip works"></textarea>
                         </div>
                     </div>
-
+                
                     <!-- Related Items -->
                     <div class="form-section">
                         <h3 class="form-section-title">Related Items</h3>
                         <div class="form-group">
-                            <label for="related-dishes" class="form-label">Related Dishes (Optional)</label>
-                            <input type="text" id="related-dishes" name="related-dishes" class="form-control" placeholder="List dishes where this tip is particularly useful">
+                            <label for="relatedDishes" class="form-label">Related Dishes (Optional)</label>
+                            <input type="text" id="relatedDishes" name="relatedDishes" class="form-control" placeholder="List dishes where this tip is particularly useful">
                         </div>
                         <div class="form-group">
-                            <label for="related-ingredients" class="form-label">Related Ingredients (Optional)</label>
-                            <input type="text" id="related-ingredients" name="related-ingredients" class="form-control" placeholder="List specific ingredients this tip applies to">
+                            <label for="relatedIngredients" class="form-label">Related Ingredients (Optional)</label>
+                            <input type="text" id="relatedIngredients" name="relatedIngredients" class="form-control" placeholder="List specific ingredients this tip applies to">
                         </div>
                         <div class="form-group">
-                            <label for="related-equipment" class="form-label">Related Equipment (Optional)</label>
-                            <input type="text" id="related-equipment" name="related-equipment" class="form-control" placeholder="List any specific equipment needed for this tip">
+                            <label for="relatedEquipment" class="form-label">Related Equipment (Optional)</label>
+                            <input type="text" id="relatedEquipment" name="relatedEquipment" class="form-control" placeholder="List any specific equipment needed for this tip">
                         </div>
                     </div>
-
+                
                     <!-- Tip Images -->
                     <div class="form-section">
                         <h3 class="form-section-title">Tip Images</h3>
@@ -134,42 +134,41 @@
                             <div class="upload-container" id="image-upload">
                                 <div class="upload-icon">📷</div>
                                 <p>Click to upload photos demonstrating your tip</p>
-                                <p style="font-size: 0.8rem; color: var(--text-light);">Upload up to 3 images that help illustrate your tip</p>
-                                <input type="file" id="tip-images" name="tip-images[]" accept="image/*" multiple style="display: none;">
+                                <p style="font-size: 0.8rem; color: var(--text-light);">Upload up to 3 images</p>
+                                <input type="file" id="images" name="images" accept="image/*" multiple style="display: none;">
                             </div>
                             <div id="image-preview" style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;"></div>
                         </div>
                     </div>
-
+                
                     <!-- Personal Experience -->
                     <div class="form-section">
                         <h3 class="form-section-title">Personal Experience</h3>
                         <div class="form-group">
-                            <label for="tip-experience" class="form-label">Your Experience (Optional)</label>
-                            <textarea id="tip-experience" name="tip-experience" class="form-control" placeholder="Share how you discovered this tip or a personal story related to it"></textarea>
+                            <label for="experience" class="form-label">Your Experience (Optional)</label>
+                            <textarea id="experience" name="experience" class="form-control" placeholder="Share how you discovered this tip or a personal story related to it"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="tip-variations" class="form-label">Variations or Alternatives (Optional)</label>
-                            <textarea id="tip-variations" name="tip-variations" class="form-control" placeholder="Share any variations or alternative approaches to this tip"></textarea>
+                            <label for="variations" class="form-label">Variations or Alternatives (Optional)</label>
+                            <textarea id="variations" name="variations" class="form-control" placeholder="Share any variations or alternative approaches to this tip"></textarea>
                         </div>
                     </div>
-
-                    <!-- Personal Information -->
+                
+                    <!-- Author Info -->
                     <div class="form-section">
                         <h3 class="form-section-title">About You</h3>
                         <div class="form-group">
-                            <label for="author-name" class="form-label">Your Name*</label>
-                            <input type="text" id="author-name" name="author-name" class="form-control" required>
+                            <label for="authorName" class="form-label">Your Name*</label>
+                            <input type="text" id="authorName" name="authorName" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="author-email" class="form-label">Email Address*</label>
-                            <input type="email" id="author-email" name="author-email" class="form-control" required>
-                            <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 5px;">We'll never share your email address</p>
+                            <label for="authorEmail" class="form-label">Email Address*</label>
+                            <input type="email" id="authorEmail" name="authorEmail" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="cooking-experience" class="form-label">Cooking Experience*</label>
+                            <label for="cookingExperience" class="form-label">Cooking Experience*</label>
                             <div class="custom-select">
-                                <select id="cooking-experience" name="cooking-experience" class="form-control" required>
+                                <select id="cookingExperience" name="cookingExperience" class="form-control" required>
                                     <option value="" disabled selected>Select your experience level</option>
                                     <option value="home-cook">Home Cook</option>
                                     <option value="enthusiast">Cooking Enthusiast</option>
@@ -181,26 +180,26 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Would you like to be credited for this tip?</label>
+                            <label class="form-label">Would you like to be credited?</label>
                             <div class="radio-group">
                                 <div class="radio-option">
-                                    <input type="radio" id="credit-yes" name="credit" value="yes" checked>
-                                    <label for="credit-yes">Yes, use my name</label>
+                                    <input type="radio" id="creditYes" name="credit" value="yes" checked>
+                                    <label for="creditYes">Yes, use my name</label>
                                 </div>
                                 <div class="radio-option">
-                                    <input type="radio" id="credit-no" name="credit" value="no">
-                                    <label for="credit-no">No, keep anonymous</label>
+                                    <input type="radio" id="creditNo" name="credit" value="no">
+                                    <label for="creditNo">No, keep anonymous</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                
                     <button type="submit" class="submit-btn">Submit Tip</button>
-                    
                     <div class="form-footer">
-                        <p>By submitting this tip, you agree to our <a href="#" style="color: var(--primary);">Terms of Service</a> and <a href="#" style="color: var(--primary);">Community Guidelines</a></p>
+                        <p>By submitting this tip, you agree to our <a href="#">Terms of Service</a> and <a href="#">Community Guidelines</a></p>
                     </div>
                 </form>
+                
             </div>
         </div>
     </section>
