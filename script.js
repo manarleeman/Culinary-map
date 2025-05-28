@@ -652,12 +652,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".newsletter-form");
+    const newsletterForm = document.querySelector(".newsletter-form"); // ✅ fixed
+
     
-    form.addEventListener("submit", async (e) => {
+    newsletterForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       
-      const emailInput = form.querySelector("input[type='email']");
+      const emailInput = newsletterForm.querySelector("input[type='email']");
       const email = emailInput.value;
   
       try {
@@ -681,7 +682,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  const form = document.getElementById('tip-form');
+  
+const tipForm = document.getElementById('tip-form');
 const imageUploadContainer = document.getElementById('image-upload');
 const imageInput = document.getElementById('tip-images');
 
@@ -712,10 +714,10 @@ if (imageUploadContainer && imageInput) {
 }
 
 // Handle form submission
-form.addEventListener('submit', async (e) => {
+tipForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const formData = new FormData(form);
+  const formData = new FormData(tipForm);
 
   try {
     const response = await fetch('/api/share-tip', {
